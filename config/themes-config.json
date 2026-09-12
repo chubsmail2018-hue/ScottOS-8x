@@ -1,0 +1,40 @@
+{
+  "themes": [
+    {
+      "id": "fluent-dark",
+      "name": "Fluent Dark",
+      "description": "Windows 11 Fluent Design Dark Theme",
+      "colors": {
+        "primary": "#0078D4",
+        "background": "#1E1E1E",
+        "text": "#FFFFFF",
+        "accent": "#0078D4",
+        "secondary": "#323232",
+        "border": "#3E3E42",
+        "success": "#107C10",
+        "warning": "#FFB900",
+        "error": "#E81123"
+      },
+      "wallpaper": "wallpapers/windows11-dark.png",
+      "icons": "icons/fluent-dark"
+    },
+    {
+      "id": "fluent-light",
+      "name": "Fluent Light",
+      "description": "Windows 11 Fluent Design Light Theme",
+      "colors": {
+        "primary": "#0078D4",
+        "background": "#FFFFFF",
+        "text": "#000000",
+        "accent": "#0078D4",
+        "secondary": "#F3F3F3",
+        "border": "#E1E1E1",
+        "success": "#107C10",
+        "warning": "#FFB900",
+        "error": "#E81123"
+      },
+      "wallpaper": "wallpapers/windows11-light.png",
+      "icons": "icons/fluent-light"
+    }
+  ]
+}
