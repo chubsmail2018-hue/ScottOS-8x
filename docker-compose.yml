@@ -1,0 +1,40 @@
+# ScottOS 8x Docker Compose Configuration
+version: '3.8'
+
+services:
+  scottos-8x:
+    image: scottos-8x:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scottos-8x-dev
+    
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_GL_INTEGRATION=glvnd
+    
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.Xauthority:/home/user/.Xauthority:rw
+      - ./:/opt/scottos
+    
+    stdin_open: true
+    tty: true
+    
+    networks:
+      - scottos-network
+    
+    # Resource limits
+    mem_limit: 4g
+    cpus: 2
+    
+    # Security options
+    security_opt:
+      - seccomp:unconfined
+    
+    # Restart policy
+    restart: on-failure
+
+networks:
+  scottos-network:
+    driver: bridge
