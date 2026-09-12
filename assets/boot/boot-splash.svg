@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E1E1E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2D2D2D;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Fluent blur effect -->
+    <filter id="fluentBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background rectangle -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Fluent Design background shapes -->
+  <circle cx="200" cy="150" r="300" fill="#0078D4" opacity="0.1" filter="url(#fluentBlur)"/>
+  <circle cx="1800" cy="900" r="400" fill="#00B7EF" opacity="0.08" filter="url(#fluentBlur)"/>
+  
+  <!-- ScottOS Logo/Text -->
+  <g id="logo" transform="translate(960, 400)">
+    <!-- Blue accent line -->
+    <rect x="-150" y="-80" width="300" height="3" fill="#0078D4" opacity="0.8"/>
+    
+    <!-- Main text -->
+    <text x="0" y="50" font-family="Segoe UI, -apple-system, system-ui" font-size="80" font-weight="300" text-anchor="middle" fill="#FFFFFF" letter-spacing="2">
+      ScottOS 8x
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="110" font-family="Segoe UI, -apple-system, system-ui" font-size="24" font-weight="300" text-anchor="middle" fill="#CCCCCC" letter-spacing="1" opacity="0.8">
+      Windows 11 Inspired Linux
+    </text>
+  </g>
+  
+  <!-- Progress indicator -->
+  <g id="progress" transform="translate(960, 650)">
+    <!-- Progress bar background -->
+    <rect x="-150" y="0" width="300" height="8" rx="4" fill="#404040" opacity="0.5"/>
+    
+    <!-- Progress bar fill (will be animated) -->
+    <rect x="-150" y="0" width="150" height="8" rx="4" fill="#0078D4" opacity="0.9">
+      <animate attributeName="width" from="0" to="300" dur="5s" />
+    </rect>
+    
+    <!-- Loading dots -->
+    <g opacity="0.6">
+      <circle cx="-220" cy="25" r="4" fill="#0078D4">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="-195" cy="25" r="4" fill="#0078D4">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="-170" cy="25" r="4" fill="#0078D4">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="1s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Boot status text -->
+  <text x="960" y="800" font-family="Segoe UI, -apple-system, system-ui" font-size="16" text-anchor="middle" fill="#999999" letter-spacing="0.5">
+    Initializing...
+  </text>
+</svg>
